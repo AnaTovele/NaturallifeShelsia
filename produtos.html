@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NaturaLife — Produtos Naturais</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: #f7f7f7;
+        }
+
+        header {
+            background-color: #2f553a;
+            padding: 15px 30px;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+       
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 26px;
+            font-weight: 700;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: .3s;
+        }
+
+        nav a:hover {
+            color: #d4eacb;
+        }
+
+        .menu-btn {
+            display: none;
+            font-size: 26px;
+            cursor: pointer;
+        }
+
+        .mobile-nav {
+            display: none;
+            flex-direction: column;
+            background: #2f553a;
+            padding: 15px;
+        }
+
+        .mobile-nav a {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            color: #fff;
+        }
+
+        .banner {
+            width: 100%;
+            height: 300px;
+            background: url("https://images.pexels.com/photos/1695052/pexels-photo-1695052.jpeg")
+                center/cover no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .banner h2 {
+            background: rgba(0,0,0,0.55);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 30px;
+            font-weight: 600;
+        }
+
+        .filtros {
+            margin: 40px auto 10px;
+            text-align: center;
+        }
+
+        .filtros button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            background: #2f553a;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .filtros button:hover {
+            background: #1f3d29;
+        }
+
+        .produtos {
+            padding: 40px 25px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: .3s;
+            padding-bottom: 15px;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+        }
+
+        .card h3 {
+            color: #2f553a;
+            font-size: 20px;
+            margin: 15px 0 5px;
+            padding-left: 15px;
+        }
+
+        .card p {
+            padding: 0 15px;
+            color: #555;
+        }
+
+        .card button {
+            margin: 12px 15px 0;
+            padding: 10px 20px;
+            background: #2f553a;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .card button:hover {
+            background: #1f3d29;
+        }
+
+    
+        footer {
+            background-color: #2f553a;
+            color: #fff;
+            padding: 40px 30px;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .newsletter input {
+            padding: 10px 15px;
+            width: 250px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .newsletter button {
+            padding: 10px 20px;
+            background: #1f3d29;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .footer-icons i {
+            margin: 0 8px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    background: #2f553a;
+}
+
+.navbar .logo {
+    color: #d4eacb;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.navbar .logo span {
+    color: #ffffff;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.nav-links li a:hover {
+    color: #d4eacb;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 26px;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #2f553a;
+        flex-direction: column;
+        width: 220px;
+        padding: 15px 0;
+        border-radius: 0 0 12px 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links li {
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <h1 class="logo">Natura<span>Life</span></h1>
+
+        <button class="menu-toggle" onclick="toggleMenu()">
+            <i class="fa fa-bars"></i>
+        </button>
+
+        <ul class="nav-links" id="navMenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="produtos.html">Produtos</a></li>
+            <li><a href="sobre.html">Sobre Nós</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+<div class="mobile-nav" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="produtos.html">Produtos</a>
+    <a href="sobre.html">Sobre Nós</a>
+    <a href="contacto.html">Contacto</a>
+</div>
+
+<div class="banner">
+    <h2>Catálogo de Produtos Naturais</h2>
+</div>
+
+<div class="filtros">
+    <button>Todos</button>
+    <button>Chás</button>
+    <button>Óleos</button>
+    <button>Sementes</button>
+    <button>Cosméticos</button>
+</div>
+
+<div class="produtos">
+
+    <div class="card">
+        <img src="https://m.media-amazon.com/images/I/61xB76fnSQL._AC_UF894,1000_QL80_.jpg">
+        <h3>Chá Verde Orgânico</h3>
+        <p>Desintoxica o corpo e melhora a energia.</p>
+        <button>Comprar</button>
+    </div>
+
+    <div class="card">
+        <img src="https://image.tuasaude.com/media/article/le/uq/oleo-essencial-de-lavanda_61273.jpg">
+        <h3>Óleo Essencial de Lavanda</h3>
+        <p>Ideal para relaxamento e aromaterapia.</p>
+        <button>Comprar</button>
+    </div>
+
+    <div class="card">
+        <img src="https://images.pexels.com/photos/1660027/pexels-photo-1660027.jpeg">
+        <h3>Sementes de Chia</h3>
+        <p>Ricas em fibras e ômegas para uma vida saudável.</p>
+        <button>Comprar</button>
+    </div>
+
+    <div class="card">
+        <img src="https://animalbusiness.com.br/wp-content/uploads/2024/10/16-Cera-e-Mel-de-Abelha_Foto_Shutterstock-site.png">
+        <h3>Mel Orgânico</h3>
+        <p>Puro, natural e cheio de benefícios.</p>
+        <button>Comprar</button>
+    </div>
+
+    <div class="card">
+        <img src="https://cdn.awsli.com.br/142/142155/produto/45887023/a6bb50b75f.jpg">
+        <h3>Sabonete Herbal</h3>
+        <p>Totalmente natural, suave e aromático.</p>
+        <button>Comprar</button>
+    </div>
+    <div class="card">
+       <img src="https://i0.wp.com/media.buddhaspa.com.br/uploads/2022/12/CHA-DETOX-1_Easy-Resize.com_.jpg?fit=1280%2C853&ssl=1">
+                <h3>Chá Detox</h3>
+                <p>Melhora a digestão, elimina toxinas e revitaliza o corpo.</p>
+                <button>Comprar</button>
+    </div>
+
+</div>
+
+
+    <footer>
+        <h3>Subscreva ao Nosso Newsletter</h3>
+        <div class="newsletter">
+            <input type="email" placeholder="Digite o seu email">
+            <button>Subscrever</button>
+        </div>
+
+        <p style="margin-top:20px;">Siga-nos</p>
+        <div class="footer-icons">
+            <i class="fa-brands fa-facebook-f"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-whatsapp"></i>
+        </div>
+
+        <p style="margin-top:20px; opacity:0.8;">
+            © 2025 NaturaLife — Todos os direitos reservados.
+        </p>
+    </footer>
+
+<script>
+function toggleMenu() {
+    const navMenu = document.getElementById('navMenu');
+    navMenu.classList.toggle('show');
+}
+</script>
+
+</body>
+</html>

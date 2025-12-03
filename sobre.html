@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NaturaLife — Sobre Nós</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        background: #f7f7f7;
+    }
+
+    header {
+        background-color: #2f553a;
+        padding: 15px 30px;
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+    }
+
+    header h1 {
+        font-size: 26px;
+        font-weight: 700;
+    }
+
+    nav {
+        display: flex;
+        gap: 20px;
+    }
+
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        transition: .3s;
+    }
+
+    nav a:hover {
+        color: #d4eacb;
+    }
+
+    .menu-btn {
+        display: none;
+        font-size: 26px;
+        cursor: pointer;
+    }
+
+    .mobile-nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #2f553a;
+        width: 200px;
+        border-radius: 0 0 8px 8px;
+        padding: 15px;
+        z-index: 1000;
+    }
+
+    .mobile-nav a {
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+        color: #fff;
+    }
+
+    .banner {
+        width: 100%;
+        height: 300px;
+        background: url("https://images.pexels.com/photos/1695052/pexels-photo-1695052.jpeg")
+            center/cover no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .banner h2 {
+        background: rgba(0,0,0,0.55);
+        color: white;
+        padding: 15px 30px;
+        border-radius: 8px;
+        font-size: 30px;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    .sobre-container {
+        max-width: 1000px;
+        margin: 50px auto;
+        padding: 0 20px;
+    }
+
+    .sobre-text {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .sobre-text h2 {
+        color: #2f553a;
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+
+    .sobre-text p {
+        color: #555;
+        font-size: 18px;
+        line-height: 1.6;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .mis-vis {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+        margin-bottom: 50px;
+    }
+
+    .mis-vis .card {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        padding: 25px 20px;
+        text-align: center;
+        max-width: 300px;
+        transition: .3s;
+    }
+
+    .mis-vis .card:hover {
+        transform: translateY(-5px);
+    }
+
+    .mis-vis .card i {
+        font-size: 40px;
+        color: #2f553a;
+        margin-bottom: 15px;
+    }
+
+    .mis-vis .card h3 {
+        color: #2f553a;
+        margin-bottom: 10px;
+        font-size: 20px;
+    }
+
+    .mis-vis .card p {
+        color: #555;
+        font-size: 15px;
+    }
+
+    .valores {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+    }
+
+    .valor-card {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        padding: 30px 20px;
+        text-align: center;
+        max-width: 250px;
+        transition: .3s;
+    }
+
+    .valor-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .valor-card i {
+        font-size: 40px;
+        color: #2f553a;
+        margin-bottom: 15px;
+    }
+
+    .valor-card h3 {
+        color: #2f553a;
+        margin-bottom: 10px;
+        font-size: 20px;
+    }
+
+    .valor-card p {
+        color: #555;
+        font-size: 15px;
+    }
+
+    footer {
+        background-color: #2f553a;
+        color: #fff;
+        padding: 40px 30px;
+        margin-top: 50px;
+        text-align: center;
+    }
+
+    .newsletter input {
+        padding: 10px 15px;
+        width: 250px;
+        border: none;
+        border-radius: 5px;
+        outline: none;
+    }
+
+    .newsletter button {
+        padding: 10px 20px;
+        background: #1f3d29;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+
+    .footer-icons i {
+        margin: 0 8px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    @media (max-width: 780px) {
+        nav { display: none; }
+        .menu-btn { display: block; }
+
+        .banner h2 {
+            font-size: 22px;
+            padding: 12px 20px;
+        }
+
+        .valores, .mis-vis {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>NaturaLife</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="sobre.html">Sobre Nós</a>
+        <a href="contacto.html">Contacto</a>
+    </nav>
+
+    <i class="fa-solid fa-bars menu-btn" onclick="toggleMenu()"></i>
+</header>
+
+<div class="mobile-nav" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="produtos.html">Produtos</a>
+    <a href="sobre.html">Sobre Nós</a>
+    <a href="contacto.html">Contacto</a>
+</div>
+
+<div class="banner">
+    <h2>Conheça a Nossa História e Valores</h2>
+</div>
+
+<div class="sobre-container">
+    <div class="sobre-text">
+        <h2>Quem Somos</h2>
+        <p>
+            A NaturaLife nasceu com a missão de trazer produtos naturais de qualidade
+            para uma vida mais saudável e equilibrada. Trabalhamos com chás, óleos,
+            sementes, cosméticos e outros produtos selecionados com cuidado, sempre
+            priorizando sustentabilidade e bem-estar.
+        </p>
+    </div>
+
+    <div class="sobre-text">
+        <h2>Missão & Visão</h2>
+        <div class="mis-vis">
+            <div class="card">
+                <i class="fa-solid fa-bullseye"></i>
+                <h3>Missão</h3>
+                <p>Fornecer produtos naturais de qualidade que promovam saúde, bem-estar e sustentabilidade.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-eye"></i>
+                <h3>Visão</h3>
+                <p>Ser referência em produtos naturais e soluções sustentáveis, inspirando um estilo de vida saudável.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="sobre-text">
+        <h2>Nossos Valores</h2>
+        <div class="valores">
+            <div class="valor-card">
+                <i class="fa-solid fa-seedling"></i>
+                <h3>Qualidade</h3>
+                <p>Produtos naturais e selecionados com rigor.</p>
+            </div>
+            <div class="valor-card">
+                <i class="fa-solid fa-leaf"></i>
+                <h3>Sustentabilidade</h3>
+                <p>Respeito pelo meio ambiente e práticas responsáveis.</p>
+            </div>
+            <div class="valor-card">
+                <i class="fa-solid fa-heart"></i>
+                <h3>Bem-estar</h3>
+                <p>Foco na saúde e na vida equilibrada dos nossos clientes.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <h3>Subscreva ao Nosso Newsletter</h3>
+    <div class="newsletter">
+        <input type="email" placeholder="Digite o seu email">
+        <button>Subscrever</button>
+    </div>
+
+    <p style="margin-top:20px;">Siga-nos</p>
+    <div class="footer-icons">
+        <i class="fa-brands fa-facebook-f"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-whatsapp"></i>
+    </div>
+
+    <p style="margin-top:20px; opacity:0.8;">
+        © 2025 NaturaLife — Todos os direitos reservados.
+    </p>
+</footer>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById("mobileMenu");
+    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+}
+</script>
+
+</body>
+</html>

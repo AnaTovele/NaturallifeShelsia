@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NaturaLife — Produtos Naturais</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+        }
+
+ 
+        header {
+            background-color: #2f553a;
+            padding: 15px 30px;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 26px;
+            font-weight: 700;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #d4eacb;
+        }
+
+        .social-top i {
+            margin-left: 15px;
+            font-size: 18px;
+            color: #fff;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .social-top i:hover {
+            color: #d4eacb;
+        }
+
+        .menu-btn {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        .mobile-nav {
+            display: none;
+            background: #2f553a;
+            flex-direction: column;
+            padding: 15px;
+        }
+
+        .mobile-nav a {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            color: #fff;
+        }
+
+        .banner {
+            width: 100%;
+            height: 370px;
+            background-image: url('https://images.pexels.com/photos/3296545/pexels-photo-3296545.jpeg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .banner h2 {
+            background-color: rgba(0,0,0,0.55);
+            color: #fff;
+            padding: 18px 32px;
+            border-radius: 8px;
+            font-size: 32px;
+        }
+
+        .sobre-marca {
+            padding: 50px 40px;
+            text-align: center;
+        }
+
+        .sobre-marca h2 {
+            color: #2f553a;
+            font-size: 28px;
+        }
+
+        .sobre-marca p {
+            max-width: 750px;
+            margin: auto;
+            color: #555;
+            font-size: 16px;
+            line-height: 1.7;
+            margin-top: 15px;
+        }
+
+        .destaques {
+            padding: 50px 40px;
+            text-align: center;
+        }
+        .destaques h2 {
+            font-size: 28px;
+            color: #2f553a;
+        }
+
+        .produtos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 12px;
+            padding-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .card h3 {
+            color: #2f553a;
+            font-size: 20px;
+            margin: 15px 0 5px;
+        }
+
+        .card button {
+            margin-top: 12px;
+            padding: 10px 25px;
+            background-color: #2f553a;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .card button:hover {
+            background-color: #1f3d29;
+        }
+
+        footer {
+            background-color: #2f553a;
+            color: #fff;
+            padding: 40px 30px;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .newsletter input {
+            padding: 10px 15px;
+            width: 250px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .newsletter button {
+            padding: 10px 20px;
+            background: #1f3d29;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .footer-icons i {
+            margin: 0 8px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 760px) {
+            nav { display: none; }
+            .menu-btn { display: block; }
+
+            .banner h2 {
+                font-size: 24px;
+                padding: 15px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>NaturaLife</h1>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="produtos.html">Produtos</a>
+            <a href="sobre.html">Sobre Nós</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+
+        <div class="social-top">
+            <i class="fa-brands fa-facebook-f"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-whatsapp"></i>
+        </div>
+
+        <i class="fa-solid fa-bars menu-btn" onclick="toggleMenu()"></i>
+    </header>
+
+    <div class="mobile-nav" id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="sobre.html">Sobre Nós</a>
+        <a href="contacto.html">Contacto</a>
+    </div>
+
+    <div class="banner">
+        <h2>Produtos Naturais • Saúde • Bem-Estar</h2>
+    </div>
+
+    <section class="sobre-marca">
+        <h2>Bem-vindo à NaturaLife</h2>
+        <p>
+            Acreditamos que o bem-estar começa com escolhas naturais.  
+            Trabalhamos com produtos 100% orgânicos, sem conservantes, 
+            cultivados de forma sustentável e pensados para melhorar sua saúde física e mental.  
+            Aqui, cada detalhe importa.
+        </p>
+    </section>
+
+    <section class="destaques">
+        <h2>Destaques da Semana</h2>
+
+        <div class="produtos">
+
+            <div class="card">
+                <img src="https://i0.wp.com/media.buddhaspa.com.br/uploads/2022/12/CHA-DETOX-1_Easy-Resize.com_.jpg?fit=1280%2C853&ssl=1">
+                <h3>Chá Detox</h3>
+                <p>Melhora a digestão, elimina toxinas e revitaliza o corpo.</p>
+                <button>Comprar</button>
+            </div>
+
+            <div class="card">
+                <img src="https://images.pexels.com/photos/4041392/pexels-photo-4041392.jpeg">
+                <h3>Óleo Essencial</h3>
+                <p>Perfeito para relaxamento e aromaterapia.</p>
+                <button>Comprar</button>
+            </div>
+
+            <div class="card">
+                <img src="https://pririciardi.com.br/wp-content/uploads/2016/09/pumpkin-flax-sesame-and-sunflover-seeds-cycling-2023-11-28-20-41-05-utc-1-scaled.jpg">
+                <h3>Sementes Naturais</h3>
+                <p>Cheias de nutrientes para uma alimentação equilibrada.</p>
+                <button>Comprar</button>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <h3>Subscreva ao Nosso Newsletter</h3>
+        <div class="newsletter">
+            <input type="email" placeholder="Digite o seu email">
+            <button>Subscrever</button>
+        </div>
+
+        <p style="margin-top:20px;">Siga-nos</p>
+        <div class="footer-icons">
+            <i class="fa-brands fa-facebook-f"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-whatsapp"></i>
+        </div>
+
+        <p style="margin-top:20px; opacity:0.8;">
+            © 2025 NaturaLife — Todos os direitos reservados.
+        </p>
+    </footer>
+
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById("mobileMenu");
+        menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+    }
+</script>
+
+</body>
+</html>
