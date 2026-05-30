@@ -1,4 +1,4 @@
-# NaturallifeShelsia
+# Naturallife
 NaturaLife — Website de Produtos Naturais
 
 Este repositório contém o código-fonte do site NaturaLife, um website informativo com páginas de apresentação, produtos, sobre nós e contacto.
